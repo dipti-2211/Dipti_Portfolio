@@ -1,13 +1,18 @@
+// app/layout.tsx
+
 import React from "react"
-import "@/app/globals.css"
+import "./globals.css"
+import { Inter } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 
+const inter = Inter({ subsets: ["latin"] })
+
 export const metadata = {
-  title: "Portfolio Website",
-  description: "My professional portfolio showcasing my skills and projects",
+  title: "Dipti Portfolio",
+  description: "Created by Dipti Singh",
   generator: "v0.dev",
   keywords: ["portfolio", "developer", "nextjs", "tailwind", "react"],
-  authors: [{ name: "Your Name", url: "https://your-domain.com" }],
+  authors: [{ name: "Dipti Singh", url: "https://your-domain.com" }],
   openGraph: {
     title: "Portfolio Website",
     description: "Showcasing my projects, skills and experience.",
@@ -38,9 +43,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html suppressHydrationWarning>
-      <body>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange={false}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange={false}
+        >
           {children}
         </ThemeProvider>
       </body>

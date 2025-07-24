@@ -7,19 +7,15 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { ProfilePicture } from '@/components/profile-picture'
 import { CodingJourney } from '@/components/coding-journey'
-
 import { ContactSection } from '@/components/contact-section'
 
-
-export default function Component() {
+export default function HomePage() {
   const [activeSection, setActiveSection] = useState('home')
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
-
-      // Update active section based on scroll position
       const sections = ['home', 'about', 'skills', 'projects', 'contact']
       const current = sections.find(section => {
         const element = document.getElementById(section)
